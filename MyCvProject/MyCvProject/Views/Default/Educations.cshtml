@@ -1,0 +1,20 @@
+﻿@using MyCvProject.Models.Entity
+@model List<myEducations>
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Eğitimlerim</h2>
+
+    @foreach (var k in Model)
+    {
+    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+        <div class="flex-grow-1">
+            <h3 class="mb-0">@k.title</h3>
+            <div class="subheading mb-3">@k.subtitle1</div>
+            <div>@k.subtitle2</div>
+            <p>@k.GPA</p>
+        </div>
+        <div class="flex-shrink-0"><span class="text-primary">@k.date</span></div>
+    </div>
+    }
+   
+</div>

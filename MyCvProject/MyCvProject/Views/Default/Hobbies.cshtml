@@ -1,0 +1,12 @@
+﻿@using MyCvProject.Models.Entity
+@model List<myHobbies>
+
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Hobilerim ve İlgi Alanlarım</h2>
+    @foreach (var i in Model)
+    {
+    <p>@i.subtitle1</p>
+    <p class="mb-0">@i.subtitle2</p>
+    }
+</div>

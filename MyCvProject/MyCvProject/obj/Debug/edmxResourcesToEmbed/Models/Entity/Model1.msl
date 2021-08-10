@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbMyCvModelStoreContainer" CdmEntityContainer="MyCvCareerEntities">
+    <EntitySetMapping Name="aboutMe">
+      <EntityTypeMapping TypeName="DbMyCvModel.aboutMe">
+        <MappingFragment StoreEntitySet="aboutMe">
+          <ScalarProperty Name="description2" ColumnName="description2" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contact">
+      <EntityTypeMapping TypeName="DbMyCvModel.contact">
+        <MappingFragment StoreEntitySet="contact">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="members">
+      <EntityTypeMapping TypeName="DbMyCvModel.members">
+        <MappingFragment StoreEntitySet="members">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="myCertifications">
+      <EntityTypeMapping TypeName="DbMyCvModel.myCertifications">
+        <MappingFragment StoreEntitySet="myCertifications">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="myEducations">
+      <EntityTypeMapping TypeName="DbMyCvModel.myEducations">
+        <MappingFragment StoreEntitySet="myEducations">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="subtitle1" ColumnName="subtitle1" />
+          <ScalarProperty Name="subtitle2" ColumnName="subtitle2" />
+          <ScalarProperty Name="GPA" ColumnName="GPA" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="myExperiences">
+      <EntityTypeMapping TypeName="DbMyCvModel.myExperiences">
+        <MappingFragment StoreEntitySet="myExperiences">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="subtitle" ColumnName="subtitle" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="myHobbies">
+      <EntityTypeMapping TypeName="DbMyCvModel.myHobbies">
+        <MappingFragment StoreEntitySet="myHobbies">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="subtitle1" ColumnName="subtitle1" />
+          <ScalarProperty Name="subtitle2" ColumnName="subtitle2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mySkills">
+      <EntityTypeMapping TypeName="DbMyCvModel.mySkills">
+        <MappingFragment StoreEntitySet="mySkills">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="skill" ColumnName="skill" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

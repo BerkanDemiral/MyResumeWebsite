@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbMyCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="aboutMe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="50" />
+    <Property Name="last_name" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="varchar" MaxLength="150" />
+    <Property Name="phone" Type="varchar" MaxLength="12" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="description" Type="varchar" MaxLength="550" />
+    <Property Name="photo" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="250" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="subject" Type="varchar" MaxLength="50" />
+    <Property Name="message" Type="varchar" MaxLength="250" />
+    <Property Name="date" Type="date" />
+  </EntityType>
+  <EntityType Name="members">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="myCertifications">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="description" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="myEducations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="150" />
+    <Property Name="subtitle1" Type="varchar" MaxLength="150" />
+    <Property Name="subtitle2" Type="varchar" MaxLength="150" />
+    <Property Name="GPA" Type="varchar" MaxLength="50" />
+    <Property Name="date" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="myExperiences">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="150" />
+    <Property Name="subtitle" Type="varchar" MaxLength="150" />
+    <Property Name="description" Type="varchar(max)" />
+    <Property Name="date" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="myHobbies">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="subtitle1" Type="varchar" MaxLength="550" />
+    <Property Name="subtitle2" Type="varchar" MaxLength="550" />
+  </EntityType>
+  <EntityType Name="mySkills">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="skill" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityContainer Name="DbMyCvModelStoreContainer">
+    <EntitySet Name="aboutMe" EntityType="Self.aboutMe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="contact" EntityType="Self.contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="members" EntityType="Self.members" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="myCertifications" EntityType="Self.myCertifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="myEducations" EntityType="Self.myEducations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="myExperiences" EntityType="Self.myExperiences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="myHobbies" EntityType="Self.myHobbies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mySkills" EntityType="Self.mySkills" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
