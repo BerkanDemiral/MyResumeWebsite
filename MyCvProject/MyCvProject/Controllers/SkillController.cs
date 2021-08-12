@@ -4,17 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MyCvProject.Models.Entity;
+using MyCvProject.Repositories;
 namespace MyCvProject.Controllers
 {
-    public class AboutMeController : Controller
+    public class SkillController : Controller
     {
-        // GET: AboutMe
-        MyCvCareerEntities db = new MyCvCareerEntities();
-
+        // GET: Skill
+        SkillRepository skillRepo = new SkillRepository();
         public ActionResult Index()
         {
-            var values = db.aboutMe.ToList();
-
+            var values = skillRepo.List();
             return View(values);
         }
     }

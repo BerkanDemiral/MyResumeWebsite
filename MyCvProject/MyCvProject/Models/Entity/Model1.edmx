@@ -17,7 +17,7 @@
           <Property Name="email" Type="varchar" MaxLength="50" />
           <Property Name="description" Type="varchar" MaxLength="550" />
           <Property Name="description2" Type="varchar" MaxLength="550" />
-          <Property Name="photo" Type="varchar" MaxLength="150" />
+          <Property Name="photo" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="contact">
           <Key>
@@ -80,6 +80,7 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="skill" Type="varchar" MaxLength="150" />
+          <Property Name="ratio" Type="tinyint" />
         </EntityType>
         <EntityContainer Name="DbMyCvModelStoreContainer">
           <EntitySet Name="aboutMe" EntityType="Self.aboutMe" Schema="dbo" store:Type="Tables" />
@@ -106,7 +107,7 @@
           <Property Name="phone" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="description" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
-          <Property Name="photo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="description2" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="contact">
@@ -170,6 +171,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="skill" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ratio" Type="Byte" />
         </EntityType>
         <EntityContainer Name="MyCvCareerEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="aboutMe" EntityType="Self.aboutMe" />
@@ -266,6 +268,7 @@
           <EntitySetMapping Name="mySkills">
             <EntityTypeMapping TypeName="DbMyCvModel.mySkills">
               <MappingFragment StoreEntitySet="mySkills">
+                <ScalarProperty Name="ratio" ColumnName="ratio" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="skill" ColumnName="skill" />
               </MappingFragment>

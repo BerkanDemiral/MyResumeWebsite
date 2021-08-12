@@ -80,6 +80,7 @@
     <EntitySetMapping Name="mySkills">
       <EntityTypeMapping TypeName="DbMyCvModel.mySkills">
         <MappingFragment StoreEntitySet="mySkills">
+          <ScalarProperty Name="ratio" ColumnName="ratio" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="skill" ColumnName="skill" />
         </MappingFragment>

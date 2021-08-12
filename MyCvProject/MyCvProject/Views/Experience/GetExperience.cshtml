@@ -1,0 +1,42 @@
+﻿@model MyCvProject.Models.Entity.myExperiences
+@{
+    ViewBag.Title = "GetExperience";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Deneyim Güncelle</h2>
+
+
+
+@using (Html.BeginForm("GetExperience", "Experience", FormMethod.Post))
+{
+
+    @Html.Label("ID")
+    @Html.TextBoxFor(e => e.id, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(e => e.title, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Açıklama")
+    @Html.TextBoxFor(e => e.subtitle, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("İş Tanımı")
+    @Html.TextAreaFor(e => e.description, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(e => e.date, new { @class = "form-control" })
+
+    <br />
+    <div>
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+
+}

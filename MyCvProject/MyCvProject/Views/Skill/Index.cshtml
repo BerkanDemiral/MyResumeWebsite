@@ -1,0 +1,91 @@
+﻿@using MyCvProject.Models.Entity
+@model List<mySkills>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@{string color = "";}
+@{string color2 = "";}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Yetenek Listem</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Yetenek</th>
+                                            <th>Derece</th>
+                                            <th style="width: 40px">Derece(%)</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var i in Model)
+                                        {
+
+                                            if(i.ratio >=0 && i.ratio <= 50)
+                                            {
+                                                color = "progress-bar bg-danger";
+                                                color2 = "badge bg-danger";
+                                            }
+
+                                            if (i.ratio >= 51 && i.ratio <= 70)
+                                            {
+                                                color = "progress-bar bg-warning";
+                                                color2 = "badge bg-warning";
+                                            }
+
+                                            if (i.ratio >= 71 && i.ratio <= 84)
+                                            {
+                                                color = "progress-bar bg-primary";
+                                                color2 = "badge bg-primary";
+                                            }
+
+                                            if (i.ratio >= 85 && i.ratio <= 100)
+                                            {
+                                                color = "progress-bar bg-success";
+                                                color2 = "badge bg-success";
+                                            }
+
+                                        <tr>
+                                            <td>@i.id</td>
+                                            <td>@i.skill</td>
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="@color" style="width: @i.ratio%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="@color2">@i.ratio%</span></td>
+                                            <td><a href="#" class="btn btn-danger">Sil</a></td>
+                                            <td><a href="#" class="btn btn-success">Güncelle</a></td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+</body>
+</html>

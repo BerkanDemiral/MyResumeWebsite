@@ -12,7 +12,7 @@
     <Property Name="email" Type="varchar" MaxLength="50" />
     <Property Name="description" Type="varchar" MaxLength="550" />
     <Property Name="description2" Type="varchar" MaxLength="550" />
-    <Property Name="photo" Type="varchar" MaxLength="150" />
+    <Property Name="photo" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="contact">
     <Key>
@@ -75,6 +75,7 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="skill" Type="varchar" MaxLength="150" />
+    <Property Name="ratio" Type="tinyint" />
   </EntityType>
   <EntityContainer Name="DbMyCvModelStoreContainer">
     <EntitySet Name="aboutMe" EntityType="Self.aboutMe" Schema="dbo" store:Type="Tables" />

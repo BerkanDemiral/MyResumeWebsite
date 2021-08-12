@@ -1,8 +1,24 @@
-﻿
+﻿@using MyCvProject.Models.Entity
+@model List<aboutMe>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Hakkımda</h2>
 
+@foreach (var i in Model)
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Şehir</th>
+        </tr>
+        <tr>
+            <td>@i.Id</td>
+            <td>@i.first_name</td>
+            <td>@i.address</td>
+        </tr>
+    </table>
+}

@@ -11,7 +11,7 @@
     <Property Name="phone" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
     <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="description" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
-    <Property Name="photo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="description2" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="contact">
@@ -75,6 +75,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="skill" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ratio" Type="Byte" />
   </EntityType>
   <EntityContainer Name="MyCvCareerEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="aboutMe" EntityType="Self.aboutMe" />
