@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
-using MyCvProject.Models.Entity;
+ using MyCvProject.Models.Entity;
 
 namespace MyCvProject.Repositories
 {
     public class GenericRepositories<T> where T : class, new()
     {
-        MyCvCareerEntities db = new MyCvCareerEntities();
+        MyCvCareerEntities2 db = new MyCvCareerEntities2();
 
         public List<T> List()
         {

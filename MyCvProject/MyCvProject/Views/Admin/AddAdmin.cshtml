@@ -1,0 +1,24 @@
+﻿@model MyCvProject.Models.Entity.members
+@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Admin Ekle</h2>
+<br />
+
+<form method="post">
+    @Html.Label("Kullanıcı Adı")
+    @Html.TextBoxFor(x => x.username, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.username, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Parola")
+    @Html.TextBoxFor(x => x.password, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.password, "", new { @style = "color:red" })
+    <br />
+    <br />
+    <button class="btn btn-info">Admin Ekle</button>    
+
+
+
+</form>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DbMyCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="MyCvCareerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="aboutMe">
     <Key>
       <PropertyRef Name="Id" />
@@ -74,10 +74,20 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="skill" Type="varchar" MaxLength="150" />
-    <Property Name="ratio" Type="tinyint" />
+    <Property Name="skill_name" Type="varchar" MaxLength="150" />
+    <Property Name="ratio" Type="int" />
   </EntityType>
-  <EntityContainer Name="DbMyCvModelStoreContainer">
+  <EntityType Name="socialMedia">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="social_media_name" Type="varchar" MaxLength="50" />
+    <Property Name="icon" Type="varchar" MaxLength="50" />
+    <Property Name="link" Type="varchar" MaxLength="50" />
+    <Property Name="status_" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="MyCvCareerModelStoreContainer">
     <EntitySet Name="aboutMe" EntityType="Self.aboutMe" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="contact" EntityType="Self.contact" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="members" EntityType="Self.members" Schema="dbo" store:Type="Tables" />
@@ -86,5 +96,6 @@
     <EntitySet Name="myExperiences" EntityType="Self.myExperiences" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="myHobbies" EntityType="Self.myHobbies" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mySkills" EntityType="Self.mySkills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="socialMedia" EntityType="Self.socialMedia" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

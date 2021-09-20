@@ -1,0 +1,27 @@
+﻿@model MyCvProject.Models.Entity.mySkills
+@{
+    ViewBag.Title = "AddSkill";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Yetenek Ekle</h2>
+
+
+<form method="post">
+
+    @Html.Label("Yetenek Adı")
+    @Html.TextBoxFor(s => s.skill_name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(s => s.skill_name, "", new { @style = "color:red" })
+
+    <br />
+
+    @Html.Label("Yetenek Derecesi")
+    @Html.TextBoxFor(s => s.ratio, new { @class = "form-control" })
+    @Html.ValidationMessageFor(s => s.ratio, "", new { @style = "color:red" })
+    <br />
+    <br />
+    <button class="btn btn-info">Yeni Deneyim Ekle</button>
+</form>
+
+
+

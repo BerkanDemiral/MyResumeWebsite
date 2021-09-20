@@ -1,0 +1,36 @@
+﻿@model MyCvProject.Models.Entity.myEducations
+@{
+    ViewBag.Title = "AddEducation";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Yeni Eğitim Ekle</h2>
+<br />
+
+<form method="post">
+
+    @Html.Label("Okul Adı")
+    @Html.TextBoxFor(s => s.title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(s => s.title, "", new { @style = "color:red" })
+    <br />
+
+    @Html.Label("Bölüm/Başlık")
+    @Html.TextBoxFor(s => s.subtitle1, new { @class = "form-control" })
+    @Html.ValidationMessageFor(s => s.subtitle1, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Açıklama")
+    @Html.TextBoxFor(s => s.subtitle2, new { @class = "form-control" })
+    @Html.ValidationMessageFor(s => s.subtitle2, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("GNO")
+    @Html.TextBoxFor(s => s.GPA, new { @class = "form-control" })
+    @Html.ValidationMessageFor(s => s.GPA, "", new { @style = "color:red" })
+
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(s => s.date, new { @class = "form-control" })
+    @Html.ValidationMessageFor(s => s.date, "", new { @style = "color:red" })
+    <br />
+    <br />
+    <button class="btn btn-info">Yeni Eğitim Ekle</button>
+</form> 

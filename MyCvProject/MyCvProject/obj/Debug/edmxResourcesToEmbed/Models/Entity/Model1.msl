@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DbMyCvModelStoreContainer" CdmEntityContainer="MyCvCareerEntities">
+  <EntityContainerMapping StorageEntityContainer="MyCvCareerModelStoreContainer" CdmEntityContainer="MyCvCareerEntities2">
     <EntitySetMapping Name="aboutMe">
-      <EntityTypeMapping TypeName="DbMyCvModel.aboutMe">
+      <EntityTypeMapping TypeName="MyCvCareerModel.aboutMe">
         <MappingFragment StoreEntitySet="aboutMe">
-          <ScalarProperty Name="description2" ColumnName="description2" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="first_name" ColumnName="first_name" />
           <ScalarProperty Name="last_name" ColumnName="last_name" />
@@ -12,12 +11,13 @@
           <ScalarProperty Name="phone" ColumnName="phone" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="description2" ColumnName="description2" />
           <ScalarProperty Name="photo" ColumnName="photo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="contact">
-      <EntityTypeMapping TypeName="DbMyCvModel.contact">
+      <EntityTypeMapping TypeName="MyCvCareerModel.contact">
         <MappingFragment StoreEntitySet="contact">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="name" ColumnName="name" />
@@ -29,7 +29,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="members">
-      <EntityTypeMapping TypeName="DbMyCvModel.members">
+      <EntityTypeMapping TypeName="MyCvCareerModel.members">
         <MappingFragment StoreEntitySet="members">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="username" ColumnName="username" />
@@ -38,7 +38,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="myCertifications">
-      <EntityTypeMapping TypeName="DbMyCvModel.myCertifications">
+      <EntityTypeMapping TypeName="MyCvCareerModel.myCertifications">
         <MappingFragment StoreEntitySet="myCertifications">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="description" ColumnName="description" />
@@ -46,7 +46,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="myEducations">
-      <EntityTypeMapping TypeName="DbMyCvModel.myEducations">
+      <EntityTypeMapping TypeName="MyCvCareerModel.myEducations">
         <MappingFragment StoreEntitySet="myEducations">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="title" ColumnName="title" />
@@ -58,7 +58,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="myExperiences">
-      <EntityTypeMapping TypeName="DbMyCvModel.myExperiences">
+      <EntityTypeMapping TypeName="MyCvCareerModel.myExperiences">
         <MappingFragment StoreEntitySet="myExperiences">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="title" ColumnName="title" />
@@ -69,7 +69,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="myHobbies">
-      <EntityTypeMapping TypeName="DbMyCvModel.myHobbies">
+      <EntityTypeMapping TypeName="MyCvCareerModel.myHobbies">
         <MappingFragment StoreEntitySet="myHobbies">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="subtitle1" ColumnName="subtitle1" />
@@ -77,12 +77,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="socialMedia">
+      <EntityTypeMapping TypeName="MyCvCareerModel.socialMedia">
+        <MappingFragment StoreEntitySet="socialMedia">
+          <ScalarProperty Name="status_" ColumnName="status_" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="social_media_name" ColumnName="social_media_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="mySkills">
-      <EntityTypeMapping TypeName="DbMyCvModel.mySkills">
+      <EntityTypeMapping TypeName="MyCvCareerModel.mySkills">
         <MappingFragment StoreEntitySet="mySkills">
           <ScalarProperty Name="ratio" ColumnName="ratio" />
+          <ScalarProperty Name="skill_name" ColumnName="skill_name" />
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="skill" ColumnName="skill" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

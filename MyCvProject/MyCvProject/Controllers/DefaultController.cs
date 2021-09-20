@@ -11,10 +11,11 @@ namespace MyCvProject.Controllers
     // ardından ana html yapısında sıralamalar ayarlanarak sayfa düzeni oturtulmuş olur.  
 
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         // GET: Default
-        MyCvCareerEntities db = new MyCvCareerEntities();
+        MyCvCareerEntities2 db = new MyCvCareerEntities2();
         public ActionResult Index()
         {
             var values = db.aboutMe.ToList();
@@ -47,6 +48,12 @@ namespace MyCvProject.Controllers
         public PartialViewResult Certifications()
         {
             var values = db.myCertifications.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult SocialMedia()
+        {
+            var values = db.socialMedia.Where(x=>x.status_==true).ToList();
             return PartialView(values);
         }
 

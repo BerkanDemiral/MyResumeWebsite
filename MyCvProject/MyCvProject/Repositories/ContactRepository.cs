@@ -7,5 +7,11 @@ namespace MyCvProject.Repositories
 {
     public class ContactRepository : GenericRepositories<contact>
     {
+        MyCvCareerEntities2 db = new MyCvCareerEntities2();
+
+        public List<contact> orderByDesc()
+        {
+            return db.contact.OrderByDescending(x => x.date).ToList();
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace MyCvProject.Models.Entity
     public partial class mySkills
     {
         public int id { get; set; }
-        public string skill { get; set; }
-        public Nullable<byte> ratio { get; set; }
+        public string skill_name { get; set; }
+        public Nullable<int> ratio { get; set; }
     }
 }

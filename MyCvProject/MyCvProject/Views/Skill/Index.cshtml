@@ -24,6 +24,7 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
+
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
@@ -38,12 +39,12 @@
                                     <tbody>
                                         @foreach (var i in Model)
                                         {
-
-                                            if(i.ratio >=0 && i.ratio <= 50)
+                                            if (i.ratio >= 0 && i.ratio <= 40)
                                             {
                                                 color = "progress-bar bg-danger";
                                                 color2 = "badge bg-danger";
                                             }
+
 
                                             if (i.ratio >= 51 && i.ratio <= 70)
                                             {
@@ -63,21 +64,34 @@
                                                 color2 = "badge bg-success";
                                             }
 
-                                        <tr>
-                                            <td>@i.id</td>
-                                            <td>@i.skill</td>
-                                            <td>
-                                                <div class="progress progress-xs">
-                                                    <div class="@color" style="width: @i.ratio%"></div>
-                                                </div>
-                                            </td>
-                                            <td><span class="@color2">@i.ratio%</span></td>
-                                            <td><a href="#" class="btn btn-danger">Sil</a></td>
-                                            <td><a href="#" class="btn btn-success">Güncelle</a></td>
-                                        </tr>
+                                            <tr>
+                                                <td>@i.id</td>
+                                                <td>@i.skill_name</td>
+                                                <td>
+                                                    <div class="progress progress-xs">
+                                                        <div class="@color" style="width: @i.ratio%"></div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="@color2">@i.ratio%</span></td>
+                                                <td>
+                                                    <a class="btn btn-info btn-sm" href="/Skill/GetSkill/@i.id">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                        Düzenle
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-danger btn-sm" href="/Skill/DeleteSkill/@i.id">
+                                                        <i class="fas fa-trash"></i>
+                                                        Sil
+                                                    </a>
+                                                </td>
+                                            </tr>
                                         }
                                     </tbody>
                                 </table>
+                                <br />
+                                <a href="/Skill/AddSkill/" class="btn btn-success">Yeni Yetenek Ekle</a>
+
                             </div>
                         </div>
                         <!-- /.card -->

@@ -1,0 +1,26 @@
+﻿@model MyCvProject.Models.Entity.mySkills
+@{
+    ViewBag.Title = "GetSkill";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Yetenek Güncelle</h2>
+
+@using (Html.BeginForm("UpdateSkill", "Skill", FormMethod.Post))
+{
+
+    @Html.Label("ID")
+    @Html.TextBoxFor(s => s.id, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Yetenek Adı")
+    @Html.TextBoxFor(s => s.skill_name, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Yetenek Derecesi")
+    @Html.TextBoxFor(s => s.ratio, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+}

@@ -1,0 +1,29 @@
+﻿@model MyCvProject.Models.Entity.myCertifications
+@{
+    ViewBag.Title = "GetCertificate";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Sertifika Güncelle</h2>
+<br />
+
+
+@using (Html.BeginForm("UpdateCertificate", "Certificate", FormMethod.Post))
+{
+
+    @Html.Label("ID")
+    @Html.TextBoxFor(e => e.id, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Sertifika Adı")
+    @Html.TextAreaFor(e => e.description, new { @class = "form-control" })
+
+
+    <br />
+    <div>
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+
+}
+

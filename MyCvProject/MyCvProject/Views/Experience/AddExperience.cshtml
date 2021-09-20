@@ -8,26 +8,24 @@
 <br />
 
 <form method="post">
-    <label>Başlık</label>
-    <input type="text" name="title" class="form-control" required="" />
-
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x => x.title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.title, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Açıklama")
+    @Html.TextBoxFor(x => x.subtitle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.subtitle, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("İş Tanımı")
+    @Html.TextBoxFor(x => x.description, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.description, "", new { @style = "color:red" })
     <br />
 
-    <label>Açıklama</label>
-    <input type="text" name="subtitle" class="form-control" required="" />
-
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.date, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.date, "", new { @style = "color:red" })
     <br />
-
-    <label>İş Tanımı</label>
-    <textarea name="description" class="form-control" required="" rows="5"> </textarea> 
-
     <br />
-
-    <label>Tarih</label>
-    <input type="text" name="date" class="form-control" required="" placeholder="Ağustos 2021... gibi giriniz" />
-
-    <br />
-
     <button class="btn btn-info">Yeni Deneyim Ekle</button>
 </form>
 

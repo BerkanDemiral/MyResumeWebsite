@@ -1,0 +1,115 @@
+﻿@using MyCvProject.Models.Entity
+@model List<socialMedia>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+@{string status_ = "";}
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Sosyal Medya</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Hesap</th>
+                                            <th>Link</th>
+                                            <th>Durum</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var i in Model)
+                                        {
+                                            if (i.status_ == true)
+                                            {
+                                                status_ = "Aktif";
+                                            }
+                                            else
+                                            {
+                                                status_ = "Pasif";
+                                            }
+                                        <tr>
+                                            <td>@i.id</td>
+                                            <td>@i.social_media_name</td>
+                                            <td>@i.link</td>
+                                            <td>@status_</td>
+                                            <td>
+                                                <a class="btn btn-info btn-sm" href="/SocialMedia/GetSocialMedia/@i.id">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    Düzenle
+                                                </a>
+
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-danger btn-sm" href="/SocialMedia/DeleteMedia/@i.id">
+                                                    <i class="fas fa-trash"></i>
+                                                    Sil
+                                                </a>
+                                            </td>
+
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                                <br />
+                                <button class="btn btn-success" data-toggle="modal" data-target="#Modal1">Yeni Sosyal Medya Hesabı Ekle</button>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <div class="modal" id="Modal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 style="color: sandybrown" class="modal-title">Hesap Ekle</h3>
+                    </div>
+                    <form method="post" action="/SocialMedia/AddMedia/">
+                        <div class="modal-body">
+                            <label>Sosyal Medya</label>
+                            <input type="text" name="name" class="form-control" />
+                            <br />
+
+                            <label>Link</label>
+                            <input type="text" name="link" class="form-control" />
+                            <br />
+
+                            <label>İcon</label>
+                            <input type="text" name="icon" class="form-control" />
+                            <br />
+
+                            <label>Durum</label>
+                            Aktif <input type="radio" name="status" value="True"/>
+                            Pasif <input type="radio" name="status" value="False" />
+                            <br />
+                            <br />
+                            <button class="btn btn-warning">Ekle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

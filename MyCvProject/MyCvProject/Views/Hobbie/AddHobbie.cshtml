@@ -1,0 +1,27 @@
+﻿@model MyCvProject.Models.Entity.myHobbies
+
+@{
+    ViewBag.Title = "AddHobbie";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Hobi/İlgi Alanı Ekle</h2>
+
+<br />
+
+<form method="post">
+
+    @Html.Label("Hobi")
+    @Html.TextAreaFor(s => s.subtitle1, new { @class = "form-control" })
+    @Html.ValidationMessageFor(s => s.subtitle1, "", new { @style = "color:red" })
+
+    <br />
+
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(s => s.subtitle2, new { @class = "form-control" })
+    @Html.ValidationMessageFor(s => s.subtitle2, "", new { @style = "color:red" })
+    <br />
+    <br />
+    <button class="btn btn-info">Yeni Hobi Ekle</button>
+</form>
+

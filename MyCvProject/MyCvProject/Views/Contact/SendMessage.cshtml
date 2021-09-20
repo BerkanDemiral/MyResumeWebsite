@@ -1,0 +1,25 @@
+﻿@model MyCvProject.Models.Entity.contact
+    @{
+        ViewBag.Title = "SendMessage";
+        Layout = "~/Views/Shared/AdminLayout.cshtml";
+    }
+
+    <h2>Cevap Gönder</h2>
+    <br />
+
+    <div class="resume-section-content">
+        <form method="post">
+            <label>İsim: <span style="color:orange;">@ViewBag.name</span> </label>
+            <br />
+            <label>Hedef Mail Adresi:<span style="color:orange;"> @ViewBag.email </span> </label>
+            <br />
+            <label>Konu:<span style="color:orange;"> Cevap olarak <@ViewBag.subject>  </span> </label>
+            <br />
+            <label>Mesaj</label>
+            <input type="text" class="form-control" name="message" required="" />
+            <br />
+            <button class="btn btn-success" type="submit"> Mesaj Gönder </button>
+        </form>
+    </div>
+
+

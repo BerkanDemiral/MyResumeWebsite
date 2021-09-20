@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DbMyCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MyCvCareerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="aboutMe">
           <Key>
             <PropertyRef Name="Id" />
@@ -79,10 +79,20 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="skill" Type="varchar" MaxLength="150" />
-          <Property Name="ratio" Type="tinyint" />
+          <Property Name="skill_name" Type="varchar" MaxLength="150" />
+          <Property Name="ratio" Type="int" />
         </EntityType>
-        <EntityContainer Name="DbMyCvModelStoreContainer">
+        <EntityType Name="socialMedia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="social_media_name" Type="varchar" MaxLength="50" />
+          <Property Name="icon" Type="varchar" MaxLength="50" />
+          <Property Name="link" Type="varchar" MaxLength="50" />
+          <Property Name="status_" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="MyCvCareerModelStoreContainer">
           <EntitySet Name="aboutMe" EntityType="Self.aboutMe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="contact" EntityType="Self.contact" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="members" EntityType="Self.members" Schema="dbo" store:Type="Tables" />
@@ -91,11 +101,12 @@
           <EntitySet Name="myExperiences" EntityType="Self.myExperiences" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="myHobbies" EntityType="Self.myHobbies" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mySkills" EntityType="Self.mySkills" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="socialMedia" EntityType="Self.socialMedia" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DbMyCvModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="MyCvCareerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="aboutMe">
           <Key>
             <PropertyRef Name="Id" />
@@ -107,8 +118,8 @@
           <Property Name="phone" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="description" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
-          <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="description2" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
+          <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="contact">
           <Key>
@@ -165,15 +176,7 @@
           <Property Name="subtitle1" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
           <Property Name="subtitle2" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="mySkills">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="skill" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="ratio" Type="Byte" />
-        </EntityType>
-        <EntityContainer Name="MyCvCareerEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MyCvCareerEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="aboutMe" EntityType="Self.aboutMe" />
           <EntitySet Name="contact" EntityType="Self.contact" />
           <EntitySet Name="members" EntityType="Self.members" />
@@ -181,18 +184,36 @@
           <EntitySet Name="myEducations" EntityType="Self.myEducations" />
           <EntitySet Name="myExperiences" EntityType="Self.myExperiences" />
           <EntitySet Name="myHobbies" EntityType="Self.myHobbies" />
-          <EntitySet Name="mySkills" EntityType="Self.mySkills" />
+          <EntitySet Name="socialMedia" EntityType="MyCvCareerModel.socialMedia" />
+          <EntitySet Name="mySkills" EntityType="MyCvCareerModel.mySkills" />
         </EntityContainer>
+        <EntityType Name="socialMedia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="social_media_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="icon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="link" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status_" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="mySkills">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="skill_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ratio" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DbMyCvModelStoreContainer" CdmEntityContainer="MyCvCareerEntities">
+        <EntityContainerMapping StorageEntityContainer="MyCvCareerModelStoreContainer" CdmEntityContainer="MyCvCareerEntities2">
           <EntitySetMapping Name="aboutMe">
-            <EntityTypeMapping TypeName="DbMyCvModel.aboutMe">
+            <EntityTypeMapping TypeName="MyCvCareerModel.aboutMe">
               <MappingFragment StoreEntitySet="aboutMe">
-                <ScalarProperty Name="description2" ColumnName="description2" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="first_name" ColumnName="first_name" />
                 <ScalarProperty Name="last_name" ColumnName="last_name" />
@@ -200,12 +221,13 @@
                 <ScalarProperty Name="phone" ColumnName="phone" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="description2" ColumnName="description2" />
                 <ScalarProperty Name="photo" ColumnName="photo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="contact">
-            <EntityTypeMapping TypeName="DbMyCvModel.contact">
+            <EntityTypeMapping TypeName="MyCvCareerModel.contact">
               <MappingFragment StoreEntitySet="contact">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -217,7 +239,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="members">
-            <EntityTypeMapping TypeName="DbMyCvModel.members">
+            <EntityTypeMapping TypeName="MyCvCareerModel.members">
               <MappingFragment StoreEntitySet="members">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="username" ColumnName="username" />
@@ -226,7 +248,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="myCertifications">
-            <EntityTypeMapping TypeName="DbMyCvModel.myCertifications">
+            <EntityTypeMapping TypeName="MyCvCareerModel.myCertifications">
               <MappingFragment StoreEntitySet="myCertifications">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="description" ColumnName="description" />
@@ -234,7 +256,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="myEducations">
-            <EntityTypeMapping TypeName="DbMyCvModel.myEducations">
+            <EntityTypeMapping TypeName="MyCvCareerModel.myEducations">
               <MappingFragment StoreEntitySet="myEducations">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -246,7 +268,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="myExperiences">
-            <EntityTypeMapping TypeName="DbMyCvModel.myExperiences">
+            <EntityTypeMapping TypeName="MyCvCareerModel.myExperiences">
               <MappingFragment StoreEntitySet="myExperiences">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -257,7 +279,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="myHobbies">
-            <EntityTypeMapping TypeName="DbMyCvModel.myHobbies">
+            <EntityTypeMapping TypeName="MyCvCareerModel.myHobbies">
               <MappingFragment StoreEntitySet="myHobbies">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="subtitle1" ColumnName="subtitle1" />
@@ -265,12 +287,23 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="socialMedia">
+            <EntityTypeMapping TypeName="MyCvCareerModel.socialMedia">
+              <MappingFragment StoreEntitySet="socialMedia">
+                <ScalarProperty Name="status_" ColumnName="status_" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="icon" ColumnName="icon" />
+                <ScalarProperty Name="social_media_name" ColumnName="social_media_name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="mySkills">
-            <EntityTypeMapping TypeName="DbMyCvModel.mySkills">
+            <EntityTypeMapping TypeName="MyCvCareerModel.mySkills">
               <MappingFragment StoreEntitySet="mySkills">
                 <ScalarProperty Name="ratio" ColumnName="ratio" />
+                <ScalarProperty Name="skill_name" ColumnName="skill_name" />
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="skill" ColumnName="skill" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

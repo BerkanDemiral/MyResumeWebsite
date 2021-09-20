@@ -1,0 +1,35 @@
+﻿@model MyCvProject.Models.Entity.myHobbies
+@{
+    ViewBag.Title = "GetHobbie";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Güncelle</h2>
+<br />
+
+
+@using (Html.BeginForm("UpdateHobbie", "Hobbie", FormMethod.Post))
+{
+
+    @Html.Label("ID")
+    @Html.TextBoxFor(e => e.id, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Hobi Adı")
+    @Html.TextAreaFor(e => e.subtitle1, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(e => e.subtitle2, new { @class = "form-control" })
+
+
+
+    <br />
+    <div>
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+
+}
+

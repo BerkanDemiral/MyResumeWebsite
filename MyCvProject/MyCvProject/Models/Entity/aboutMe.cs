@@ -21,7 +21,7 @@ namespace MyCvProject.Models.Entity
         public string phone { get; set; }
         public string email { get; set; }
         public string description { get; set; }
-        public string photo { get; set; }
         public string description2 { get; set; }
+        public string photo { get; set; }
     }
 }

@@ -1,0 +1,34 @@
+﻿@model MyCvProject.Models.Entity.members
+@{
+    ViewBag.Title = "GetAdmin";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Admin Bilgisi Güncelle</h2>
+<br />
+
+
+@using (Html.BeginForm("GetAdmin", "Admin", FormMethod.Post))
+{
+
+    @Html.Label("ID")
+    @Html.TextBoxFor(e => e.id, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Kullanıcı Adı")
+    @Html.TextBoxFor(e => e.username, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Parola")
+    @Html.TextBoxFor(e => e.password, new { @class = "form-control" })
+
+    <br />
+
+    <div>
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+
+}
+

@@ -1,0 +1,64 @@
+﻿@using MyCvProject.Models.Entity;
+@model List<contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Gelen Mesajlar</h2>
+<br />
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header p-2">
+
+                        </div><!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="tab-pane" id="timeline">
+                                <!-- The timeline -->
+                                <div class="timeline timeline-inverse">
+                                    <!-- timeline time label -->
+                                    @foreach (var c in Model)
+                                    {
+                                        <div class="time-label">
+                                            <span class="bg-success">
+                                                @(((DateTime)c.date).ToString("dd-MMM-yyyy"))
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <i class="fas fa-comments bg-warning"></i>
+                                            <div class="timeline-item">
+                                                <span class="time"><a href="/Contact/SendMessage/@c.id" class="far fa-clock"> @c.email</a></span>
+                                                <h3 class="timeline-header"><span style="font-weight:bolder; color:orange" >@c.name </span>Size mesaj gönderdi</h3>
+                                                <div class="timeline-body">
+                                                    @c.message
+                                                </div>
+                                                @*<div class="timeline-footer">
+                                                    <a href="#" class="btn btn-warning btn-flat btn-sm">View comment</a>
+                                                </div>*@
+                                            </div>
+                                        </div>
+                                        <!-- END timeline item -->
+                                    }
+                                </div>
+
+                            </div>
+
+                        </div><!-- /.card-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+</body>
+</html>

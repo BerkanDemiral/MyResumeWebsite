@@ -1,0 +1,76 @@
+﻿@using MyCvProject.Models.Entity
+@model List<myCertifications>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Sertifikalar ve Ödüllerim</h2>
+
+<br />
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header p-2">
+                           
+                        </div><!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="tab-pane" id="timeline">
+                                <!-- The timeline -->
+                                <div class="timeline timeline-inverse">
+                                    <!-- timeline time label -->
+                                    @foreach (var i in Model)
+                                    {
+                                        <!-- /.timeline-label -->
+                                        <!-- timeline item -->
+                                        <div>
+                                            <div class="timeline-item">
+                                                <div class="timeline-body">
+                                                    @i.description
+                                                </div>
+                                                <div class="timeline-footer">
+
+
+                                                    <a class="btn btn-info btn-sm" href="/Certificate/GetCertificate/@i.id">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                        Düzenle
+                                                    </a>
+
+
+                                                    <a class="btn btn-danger btn-sm" href="/Certificate/DeleteCertificate/@i.id">
+                                                        <i class="fas fa-trash"></i>
+                                                        Sil
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- END timeline item -->
+                                    }
+
+
+                                </div>
+                            </div>
+                            <a href="/Certificate/AddCertificate/" class="btn btn-success">Yeni Sertifika/Ödül Ekle</a>
+                        </div>
+                            <!-- /.tab-content -->
+
+
+                        </div><!-- /.card-body -->
+
+
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+    </section>
+</body>
+</html>

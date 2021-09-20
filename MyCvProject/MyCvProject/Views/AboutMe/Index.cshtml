@@ -12,13 +12,34 @@
     <table class="table table-bordered">
         <tr>
             <th>ID</th>
-            <th>Name</th>
+            <th>Ad Soyad</th>
             <th>Şehir</th>
+            <th>Telefon</th>
+            <th>Email</th>
+            <th>Açıklama</th>
+            <th>Ayrıntılar</th>
+            <th></th>
+            <th></th>
         </tr>
         <tr>
             <td>@i.Id</td>
-            <td>@i.first_name</td>
+            <td>@i.first_name @i.last_name</td>
             <td>@i.address</td>
+            <td>@i.phone</td>
+            <td>@i.email</td>
+            <td>@i.description</td>
+            <td>
+                <a class="btn btn-info btn-sm" href="/AboutMe/GetAbout/@i.Id">
+                    <i class="fas fa-pencil-alt"></i>
+                    Düzenle
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-danger btn-sm" href="/AboutMe/DeleteAbout/@i.Id">
+                    <i class="fas fa-trash"></i>
+                    Sil
+                </a>
+            </td>
         </tr>
     </table>
 }

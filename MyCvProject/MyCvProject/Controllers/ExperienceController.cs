@@ -7,11 +7,13 @@ using MyCvProject.Repositories;
 using MyCvProject.Models.Entity;
 namespace MyCvProject.Controllers
 {
+
     public class ExperienceController : Controller
     {
         // GET: Experience
         ExperienceRepository expRepo = new ExperienceRepository();
 
+       
         public ActionResult Index()
         {
             var values = expRepo.List();
@@ -27,6 +29,11 @@ namespace MyCvProject.Controllers
         [HttpPost]
         public ActionResult AddExperience(myExperiences experiences)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
             expRepo.TAdd(experiences);
             return RedirectToAction("Index");
         }

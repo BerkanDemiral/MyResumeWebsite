@@ -3,8 +3,6 @@
     Layout = null;
 }
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +19,18 @@
     <link rel="stylesheet" href="/AdminLTE-3.0.4/dist/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+    <link href="~/Content/DataTables/css/colReorder.bootstrap4.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+    <link href="~/Content/toastr.css" rel="stylesheet" />
+
 </head>
 <body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
@@ -28,93 +38,104 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="/AdminLTE-3.0.4/index3.html" class="brand-link">
+            <a href="/Default/Index/" class="brand-link">
                 <img src="/AdminLTE-3.0.4/dist/img/AdminLTELogo.png"
                      alt="AdminLTE Logo"
                      class="brand-image img-circle elevation-3"
                      style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">Berkan Demiral</span>
             </a>
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
-
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                             with font-awesome or any other icon font library -->
+                        with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/AboutMe/Index/" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Hakkımda
-                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
-
                         </li>
-                        <li class="nav-item">
-                            <a href="../widgets.html" class="nav-link">
+                        <li style="margin-top:5px" class="nav-item">
+                            <a href="/Education/Index/" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Eğitimlerim
-                                    <span class="right badge badge-danger">New</span>
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
+                        <li style="margin-top:5px" class="nav-item has-treeview">
                             <a href="/Experience/Index/" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Deneyimlerim
                                 </p>
                             </a>
-
                         </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                        <li style="margin-top:5px" class="nav-item has-treeview">
+                            <a href="/Hobbie/Index/" class="nav-link">
                                 <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
                                     Hobilerim
-                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
-
                         </li>
-
-                        <li class="nav-item">
-                            <a href="../calendar.html" class="nav-link">
+                        <li style="margin-top:5px" class="nav-item">
+                            <a href="/Skill/Index/" class="nav-link">
                                 <i class="nav-icon far fa-calendar-alt"></i>
                                 <p>
                                     Yeteneklerim
-                                    <span class="badge badge-info right">2</span>
+
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="../gallery.html" class="nav-link">
+                        <li style="margin-top:5px" class="nav-item">
+                            <a href="/Certificate/Index/" class="nav-link">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Sertifikalarım
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                        <li style="margin-top:5px" class="nav-item">
+                            <a href="/SocialMedia/Index/" class="nav-link">
+                                <i class="nav-icon fab fa-twitter"></i>
+                                <p>
+                                    Sosyal Medya
+                                </p>
+                            </a>
+                        </li>
+                        <li style="margin-top:5px" class="nav-item has-treeview">
+                            <a href="/Contact/Index/" class="nav-link">
                                 <i class="nav-icon far fa-envelope"></i>
                                 <p>
                                     İletişim
-                                    <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
-
+                        </li>
+                        <li style="margin-top:5px" class="nav-item has-treeview">
+                            <a href="/Admin/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-users-cog"></i>
+                                <p>
+                                    Admin Ayarları
+                                </p>
+                            </a>
+                        </li>
+                        <li style="margin-top:5px" class="nav-item has-treeview">
+                            <a href="/Login/LogOut/" class="nav-link">
+                                <i class="nav-icon fas fa-window-close"></i>
+                                <p>
+                                    Çıkış Yap
+                                </p>
+                            </a>
                         </li>
 
-
-
                     </ul>
-
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>
@@ -123,7 +144,6 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
 
-
             <!-- Main content -->
             <section class="content">
                 <div class="row">
@@ -131,11 +151,9 @@
                         @RenderBody()
                     </div>
                 </div>
-
             </section>
             <!-- /.content -->
         </div>
-
     </div>
     <!-- ./wrapper -->
     <!-- jQuery -->
@@ -146,5 +164,13 @@
     <script src="/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="/AdminLTE-3.0.4/dist/js/demo.js"></script>
+
+    <script src="~/Scripts/toastr.min.js"></script>
+    <script src="~/Scripts/toastr.config.js"></script>
+    @ToastrHelper.ProcessToastrs()
+
+    @RenderSection("_Scripts", false);
+
 </body>
 </html>
+

@@ -4,15 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9dcf6b1ffc9a44d6bb9da0f653b65944" Name="Diagram1">
-        <EntityTypeShape EntityType="DbMyCvModel.aboutMe" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DbMyCvModel.contact" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DbMyCvModel.members" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DbMyCvModel.myCertifications" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DbMyCvModel.myEducations" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DbMyCvModel.myExperiences" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DbMyCvModel.myHobbies" Width="1.5" PointX="8.375" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DbMyCvModel.mySkills" Width="1.5" PointX="10" PointY="4" IsExpanded="true" />
+      <Diagram DiagramId="db955b8ee592440d97fa5f9eeef837b9" Name="Diagram1">
+        <EntityTypeShape EntityType="MyCvCareerModel.aboutMe" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyCvCareerModel.contact" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyCvCareerModel.members" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyCvCareerModel.myCertifications" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyCvCareerModel.myEducations" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyCvCareerModel.myExperiences" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyCvCareerModel.myHobbies" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyCvCareerModel.socialMedia" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="MyCvCareerModel.mySkills" Width="1.5" PointX="7.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

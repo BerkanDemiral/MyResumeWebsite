@@ -1,0 +1,41 @@
+﻿@using MyCvProject.Models.Entity;
+@model List<members>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Admin Bilgileri</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kullanıcı Adı</th>
+        <th>Parola</th>
+        <th></th>
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.id</td>
+            <td>@i.username</td>
+            <td>@i.password</td>
+
+            <td>
+                <a class="btn btn-info btn-sm" href="/Admin/GetAdmin/@i.id">
+                    <i class="fas fa-pencil-alt"></i>
+                    Şifre Güncelle
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-danger btn-sm" href="/Admin/DeleteAdmin/@i.id">
+                    <i class="fas fa-trash"></i>
+                    Sil
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<a href="/Admin/AddAdmin/" class="btn btn-success">Admin Ekle</a>

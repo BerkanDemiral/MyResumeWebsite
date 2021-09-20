@@ -1,0 +1,49 @@
+﻿@model MyCvProject.Models.Entity.myEducations
+@{
+    ViewBag.Title = "GetEducations";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Eğitim Güncelle</h2>
+<br />
+
+
+@using (Html.BeginForm("UpdateEducation", "Education", FormMethod.Post))
+{
+
+    @Html.Label("ID")
+    @Html.TextBoxFor(e => e.id, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Okul")
+    @Html.TextBoxFor(e => e.title, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Bölüm/Başlık")
+    @Html.TextBoxFor(e => e.subtitle1, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(e => e.subtitle2, new { @class = "form-control" })
+
+    <br />
+
+
+    @Html.Label("GNO")
+    @Html.TextAreaFor(e => e.GPA, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(e => e.date, new { @class = "form-control" })
+
+    <br />
+    <div>
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+
+}
+

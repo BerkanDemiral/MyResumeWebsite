@@ -1,0 +1,36 @@
+﻿@model MyCvProject.Models.Entity.socialMedia
+@{
+    ViewBag.Title = "GetSocialMedia";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Güncelle</h2>
+<br />
+
+@using (Html.BeginForm("UpdateMedia", "SocialMedia", FormMethod.Post))
+{
+
+
+    @Html.Label("ID")
+    @Html.TextBoxFor(x => x.id, new { @class = "form-control" })
+    <br />
+
+
+    @Html.Label("Sosyal Medya")
+    @Html.TextBoxFor(x => x.social_media_name, new { @class = "form-control" })
+    <br />
+
+
+    @Html.Label("Link")
+    @Html.TextBoxFor(x => x.link, new { @class = "form-control" })
+    <br />
+
+
+    @Html.Label("Icon Kodu")
+    @Html.TextBoxFor(x => x.icon, new { @class = "form-control" })
+    <br />
+    <br />
+
+    <button class="btn btn-success">Güncelle</button>
+
+}

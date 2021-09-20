@@ -13,10 +13,10 @@ namespace MyCvProject.Models.Entity
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MyCvCareerEntities : DbContext
+    public partial class MyCvCareerEntities2 : DbContext
     {
-        public MyCvCareerEntities()
-            : base("name=MyCvCareerEntities")
+        public MyCvCareerEntities2()
+            : base("name=MyCvCareerEntities2")
         {
         }
     
@@ -32,6 +32,7 @@ namespace MyCvProject.Models.Entity
         public virtual DbSet<myEducations> myEducations { get; set; }
         public virtual DbSet<myExperiences> myExperiences { get; set; }
         public virtual DbSet<myHobbies> myHobbies { get; set; }
+        public virtual DbSet<socialMedia> socialMedia { get; set; }
         public virtual DbSet<mySkills> mySkills { get; set; }
     }
 }

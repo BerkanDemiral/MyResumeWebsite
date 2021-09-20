@@ -5,7 +5,9 @@ using System.Web;
 using MyCvProject.Models.Entity;
 namespace MyCvProject.Repositories
 {
+    
     public class CertificateRepository : GenericRepositories<myCertifications>
     {
+
     }
 }

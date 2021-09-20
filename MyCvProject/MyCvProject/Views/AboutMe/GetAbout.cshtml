@@ -1,0 +1,58 @@
+﻿@model MyCvProject.Models.Entity.aboutMe
+@{
+    ViewBag.Title = "GetAbout";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Hakkımda İçeriğini Düzenle</h2>
+
+
+@using (Html.BeginForm("UpdateAbout", "AboutMe", FormMethod.Post))
+{
+
+    @Html.Label("ID")
+    @Html.TextBoxFor(e => e.Id, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Ad")
+    @Html.TextBoxFor(e => e.first_name, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Soyad")
+    @Html.TextBoxFor(e => e.last_name, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Adres")
+    @Html.TextAreaFor(e => e.address, new { @class = "form-control" })
+
+    <br />
+
+
+    @Html.Label("Telefon")
+    @Html.TextAreaFor(e => e.phone, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Email")
+    @Html.TextBoxFor(e => e.email, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Açıklama")
+    @Html.TextBoxFor(e => e.description, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Ayrıntılar")
+    @Html.TextAreaFor(e => e.description2, new { @class = "form-control" })
+
+    <br />
+
+    <div>
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+
+}
